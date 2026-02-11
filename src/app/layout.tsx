@@ -36,7 +36,8 @@ export const metadata: Metadata = {
       "Personalized relationship agreements created together.",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.svg",
+    apple: "/apple-icon.svg",
   },
 };
 
