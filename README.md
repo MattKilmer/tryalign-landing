@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Align — Landing Page
 
-## Getting Started
+**Live at [https://tryalign.app](https://tryalign.app)**
 
-First, run the development server:
+Landing page for the Align relationship agreements app. Includes the marketing site, privacy policy, terms of service, and universal link handler for partner invites.
+
+## Pages
+
+| Route | Purpose |
+|-------|---------|
+| `/` | Landing page — hero, how-it-works, sample agreement, safety, download CTAs |
+| `/privacy` | Privacy policy |
+| `/terms` | Terms of service |
+| `/invite` | Universal link landing for partner invites (app store redirect) |
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 16 (App Router) |
+| Styling | Tailwind CSS v4 (`@theme inline` syntax) |
+| Typography | Fraunces (display serif) + DM Sans (body) via Google Fonts |
+| Hosting | Vercel (static export) |
+| Domain | tryalign.app (Vercel nameservers) |
+
+## Design System
+
+Colors and design tokens match the mobile app's theme (`src/lib/theme.ts` in the app repo):
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--color-primary` | `#2A9D8F` | Warm teal — buttons, accents, logo |
+| `--color-accent` | `#E07A5F` | Soft coral — highlights, CTAs |
+| `--color-cream` | `#FFFAF5` | Background |
+| `--color-ink` | `#2D2926` | Primary text |
+| `--color-ink-secondary` | `#6B5E57` | Secondary text |
+| `--color-linen` | `#F7F1EB` | Card backgrounds |
+| `--color-sand` | `#EDE6DE` | Subtle borders |
+| `--color-border` | `#E4DCD4` | Borders |
+
+## Universal Links
+
+The `public/.well-known/` directory contains:
+
+- **`apple-app-site-association`** — Apple Universal Links config for `/invite/*`
+- **`assetlinks.json`** — Android App Links config
+
+### Placeholders needing real values:
+- `TEAM_ID` in `apple-app-site-association` — replace with Apple Developer Team ID
+- `TODO:ADD_YOUR_SHA256_FINGERPRINT` in `assetlinks.json` — replace with Android signing cert fingerprint
+- App Store / Google Play download button `href="#"` — replace with real store URLs
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # Static export
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Deployed automatically via Vercel on push to `main`. Vercel project scope: `matt-kilmers-projects-e07ccc14`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+vercel --prod --scope matt-kilmers-projects-e07ccc14
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/
+    page.tsx              # Home (composes all section components)
+    layout.tsx            # Root layout (fonts, SEO metadata)
+    globals.css           # Theme system (CSS variables, animations)
+    privacy/page.tsx      # Privacy policy
+    terms/page.tsx        # Terms of service
+    invite/page.tsx       # Universal link landing
+  components/
+    Nav.tsx               # Sticky nav with scroll-aware blur
+    Hero.tsx              # Full-height hero with parallax orbs
+    HowItWorks.tsx        # 4-step grid with scroll reveal
+    SampleAgreement.tsx   # Mock agreement card mirroring app UI
+    Safety.tsx            # Trust principles grid
+    Download.tsx          # App store CTA section
+    Footer.tsx            # Footer with link columns
+public/
+  .well-known/
+    apple-app-site-association
+    assetlinks.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Related
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Mobile app:** [MattKilmer/relationship-agreements](https://github.com/MattKilmer/relationship-agreements)
+- **Support:** support@tryalign.app
