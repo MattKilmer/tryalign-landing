@@ -116,7 +116,7 @@ export default function PrivacyPage() {
               How AI is used
             </h2>
             <p className="text-ink-secondary leading-relaxed">
-              We use AI (powered by Anthropic) to generate personalized
+              We use AI to generate personalized
               agreement clauses based on your quiz answers and freetext
               responses. The AI provider processes this information only for
               generation and does not store, train on, or retain any of your
