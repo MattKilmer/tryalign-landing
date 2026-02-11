@@ -16,14 +16,32 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Align — Relationship Agreements for Modern Couples",
-  description:
-    "Take a clinically-grounded quiz, let AI draft personalized boundaries, negotiate together, and sign your shared agreement. Built on trust, backed by research.",
   metadataBase: new URL("https://tryalign.app"),
+  title: {
+    default: "Align — Relationship Agreements for Modern Couples",
+    template: "%s — Align",
+  },
+  description:
+    "Take a clinically-grounded quiz, let AI draft personalized boundaries, negotiate together, and sign a shared relationship agreement. Built on trust, backed by research.",
+  keywords: [
+    "relationship agreement",
+    "couples app",
+    "relationship boundaries",
+    "relationship contract",
+    "couples communication",
+    "AI relationship",
+    "couples therapy app",
+    "relationship expectations",
+    "trust building",
+    "couples boundaries",
+  ],
+  authors: [{ name: "Align" }],
+  creator: "Align",
+  publisher: "Align",
   openGraph: {
     title: "Align — Relationship Agreements for Modern Couples",
     description:
-      "Personalized relationship agreements created together. Take the quiz, negotiate boundaries, and build something that lasts.",
+      "Take a clinically-grounded quiz, let AI draft personalized boundaries, negotiate together, and sign your shared agreement.",
     url: "https://tryalign.app",
     siteName: "Align",
     type: "website",
@@ -33,11 +51,25 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Align — Relationship Agreements for Modern Couples",
     description:
-      "Personalized relationship agreements created together.",
+      "Personalized relationship agreements created together. Take the quiz, negotiate boundaries, and build something that lasts.",
   },
   icons: {
     icon: "/icon.svg",
     apple: "/apple-icon.svg",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://tryalign.app",
   },
 };
 

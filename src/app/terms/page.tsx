@@ -2,8 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Align",
-  description: "Terms of Service for the Align relationship agreements app.",
+  title: "Terms of Service",
+  description:
+    "Terms of Service for the Align relationship agreements app. Align is a communication tool, not therapy or legal advice.",
+  alternates: {
+    canonical: "https://tryalign.app/terms",
+  },
+  openGraph: {
+    title: "Terms of Service — Align",
+    description:
+      "Terms of Service for the Align relationship agreements app.",
+    url: "https://tryalign.app/terms",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms of Service — Align",
+    description: "Terms of Service for the Align relationship agreements app.",
+  },
 };
 
 const LAST_UPDATED = "February 2026";

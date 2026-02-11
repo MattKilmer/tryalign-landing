@@ -2,9 +2,25 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "You've been invited — Align",
+  title: "You've Been Invited",
   description:
-    "Your partner wants to build a relationship agreement with you on Align.",
+    "Your partner wants to build a relationship agreement with you on Align. Download the app to accept their invite and start shaping your shared understanding.",
+  alternates: {
+    canonical: "https://tryalign.app/invite",
+  },
+  openGraph: {
+    title: "You've been invited to Align",
+    description:
+      "Someone special wants to create a relationship agreement with you. Your voice matters — nothing is final without you.",
+    url: "https://tryalign.app/invite",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "You've been invited to Align",
+    description:
+      "Someone special wants to create a relationship agreement with you. Download the app to get started.",
+  },
 };
 
 export default function InvitePage() {

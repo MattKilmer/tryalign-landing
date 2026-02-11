@@ -2,8 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Align",
-  description: "How Align handles your data. Your privacy matters to us.",
+  title: "Privacy Policy",
+  description:
+    "How Align protects your relationship data. We never sell your information, your partner's freetext stays private, and AI providers don't retain your data.",
+  alternates: {
+    canonical: "https://tryalign.app/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy — Align",
+    description:
+      "How Align protects your relationship data. Your privacy is built into every layer of the product.",
+    url: "https://tryalign.app/privacy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy — Align",
+    description: "How Align protects your relationship data.",
+  },
 };
 
 const LAST_UPDATED = "February 2026";
