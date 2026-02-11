@@ -96,7 +96,7 @@ export default function HowItWorks() {
                 : "opacity-0 translate-y-4"
             }`}
           >
-            Four steps to your
+            Four steps to your{" "}
             <br className="hidden sm:block" />
             shared understanding
           </h2>
